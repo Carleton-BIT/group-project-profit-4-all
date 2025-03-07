@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Review Board</title>
+    <link rel="stylesheet" href="discussion.css">
+</head>
+<body>
+    <div class="review-container">
+        <h2>Rate & Review Courses</h2>
+        <form action="submit_review.php" method="POST">
+            <label for="course_name">Course Name:</label>
+            <input type="text" id="course_name" name="course_name" required>
+
+            <label for="rating">Rating (1-5):</label>
+            <select id="rating" name="rating" required>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+        <hr>
+        <h3>Recent Course Reviews</h3>
+        <div id="reviews">
+            <div class="review">
+                <h4>IRM3004</h4>
+                <p>⭐⭐⭐⭐☆</p>
+                <p>Great course! The professor explained concepts well.</p>
+            </div>
+            <div class="review">
+                <h4>OSS3009</h4>
+                <p>⭐⭐⭐☆☆</p>
+                <p>Interesting material, but the assignments were tough.</p>
+            </div>
+        </div>
+    </div>
+    <a href="DiscussionBoard.html">Back to Discussion Board</a>
+</body>
+</html>

@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f4f4f4, #ffffff); /* Light gray to white gradient */
+    padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h2, h3, h4, h5 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #FF0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Discussion Container */
+.discussion-container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 60%;
+    max-width: 800px;
+}
+
+/* Review Styles */
+.review {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #FF0000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.review p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.review p:first-of-type {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FF0000;
+}
+
+/* Comments Section */
+.comments {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.comment {
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.comment p {
+    margin: 0;
+    color: #333;
+}
+
+.comment strong {
+    color: #2c3e50;
+}
+
+/* Add Comment Form */
+.add-comment {
+    margin-top: 15px;
+}
+
+.add-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.add-comment textarea:focus {
+    border-color: #FF0000;
+    outline: none;
+}
+
+.add-comment button {
+    padding: 10px 15px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-comment button:hover {
+    background-color: #CC0000;
+}
+
+/* Back Link */
+.back-link {
+    margin-top: 20px;
+    display: inline-block;
+    color: #FF0000;
+    font-weight: bold;
+}
+
+/* "Submit a Review" Button */
+.submit-review-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Space below the button */
+    text-decoration: none; /* Remove underline */
+}
+
+.submit-review-button:hover {
+    background-color: #CC0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .discussion-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
