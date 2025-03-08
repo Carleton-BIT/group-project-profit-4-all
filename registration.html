@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Course Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <div class="back-to-home">
+        <a href="homepage.html">← Back to Homepage</a>
+    </div>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form action="register.php" method="POST">
+            <input type="text" class="input-field" name="username" placeholder="Username" required>
+            <input type="email" class="input-field" name="email" placeholder="Email" required>
+            <input type="password" class="input-field" name="password" placeholder="Password" required>
+            <input type="password" class="input-field" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit" class="register-button">Sign Up</button>
+        </form>
+        <div class="already-account">
+            <a href="login.html">Already have an account? Login</a>
+        </div>
+    </div>
+</body>
+</html>
