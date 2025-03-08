@@ -1,0 +1,93 @@
+body {
+    background: url('https://www.usatoday.com/gcdn/-mm-/a3d1f939dff013ba5e55d884eb889351d093904e/c=0-33-630-387/local/-/media/2018/08/15/USATODAY/usatsports/studying-night-e1492118687316.jpg?width=1200&disable=upscale&format=pjpg&auto=webp') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dim the background */
+    z-index: -1;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+    color: white;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 25px;
+    width: 50%;
+    max-width: 600px;
+    margin-top: 15px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.rate-my-courses {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    position: relative;
+}
+
+.rate-my {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.courses {
+    background-color: lightblue;
+    color: black;
+    padding: 10px 15px;
+    border-left: 3px solid white;
+    position: relative;
+}
+
+/* Adding small peaks to the edges */
+.rate-my::before, .courses::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid black;
+}
+
+.courses::before {
+    left: auto;
+    right: 10px;
+    border-top: 10px solid lightblue;
+}
