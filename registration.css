@@ -1,0 +1,104 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://img.freepik.com/free-vector/background-abstract-line-digital-gradient-luxury_483537-2367.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Back to Homepage Link */
+.back-to-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-to-home a {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.back-to-home a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Register Form Container */
+.register-container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* Welcome Text */
+.register-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Form Inputs */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: white;
+}
+
+/* Register Button */
+.register-button {
+    background-color: #5a2677;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background-color: #3d1a55;
+}
+
+/* Already Have an Account */
+.already-account {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.already-account a {
+    color: white;
+    text-decoration: none;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
