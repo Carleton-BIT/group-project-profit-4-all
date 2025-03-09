@@ -2,7 +2,11 @@ body {
     background: url('https://www.usatoday.com/gcdn/-mm-/a3d1f939dff013ba5e55d884eb889351d093904e/c=0-33-630-387/local/-/media/2018/08/15/USATODAY/usatsports/studying-night-e1492118687316.jpg?width=1200&disable=upscale&format=pjpg&auto=webp') no-repeat center center fixed;
     background-size: cover;
     position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
 body::after {
     content: "";
     position: absolute;
@@ -33,6 +37,7 @@ body::after {
     width: 50%;
     max-width: 600px;
     margin-top: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .search-bar input {
@@ -41,6 +46,7 @@ body::after {
     flex: 1;
     padding: 10px;
     font-size: 18px;
+    background: none;
 }
 
 .search-bar button {
@@ -91,3 +97,40 @@ body::after {
     right: 10px;
     border-top: 10px solid lightblue;
 }
+
+/* Fixing the header layout */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation bar styles */
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Log Out Button */
+#logoutBtn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    background-color: darkred;
+}
+
