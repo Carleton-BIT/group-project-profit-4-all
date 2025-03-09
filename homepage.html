@@ -22,9 +22,13 @@
             <a href="#" class="px-4 py-2 bg-gray-200 rounded">Home</a>
             <a href="#" class="px-4 py-2 bg-gray-200 rounded">Subject</a>
             <a href="#" class="px-4 py-2 bg-gray-200 rounded">About</a>
-            <a href="login.html" class="px-4 py-2 bg-gray-200 rounded">Log In</a>
+            <a href="login.html" id="loginButton" class="px-4 py-2 bg-gray-200 rounded">Log In</a>
+            <button id="logoutButton" class="px-4 py-2 bg-red-500 text-white rounded hidden" onclick="logout()">Log Out</button>
         </nav>
     </header>
+
+    <!-- Welcome Message -->
+    <div id="welcomeMessage" class="text-center text-white text-lg font-bold mt-4 hidden"></div>
     
     <!-- Center Section -->
     <div class="center-container">
@@ -48,5 +52,10 @@
         <a href="#"><img src="icon_twitter.png" alt="Twitter" class="h-8"></a>
     </footer>
 
+    <script src="loginscript.js"></script>
+    <script>
+        checkLoginStatus();
+    </script>
 </body>
 </html>
+
