@@ -1,0 +1,81 @@
+
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://img.freepik.com/free-vector/background-abstract-line-digital-gradient-luxury_483537-2367.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Styling for the Back to Homepage link */
+.back-link {
+    position: fixed; 
+    top: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: #00bcd4; 
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgba(30, 30, 47, 0.9); 
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    z-index: 100; 
+}
+
+    .back-link:hover {
+        background-color: #0097a7; 
+        text-decoration: underline;
+    }
+
+/* Main container styling for About Us content */
+.main-container {
+    text-align: center; 
+    background: rgba(45, 45, 60, 0.95); 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    max-width: 800px;
+    color: #ffffff; 
+    font-family: Arial, sans-serif;
+    line-height: 1.7; 
+    font-size: 1rem; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+    /* Title styling */
+    .main-container h1 {
+        font-size: 2.2rem; 
+        font-weight: bold;
+        color: #00bcd4; 
+        margin-bottom: 20px;
+    }
+
+    /* Paragraph styling */
+    .main-container p {
+        font-size: 1rem; 
+        margin-bottom: 20px;
+        line-height: 1.6; 
+    }
+
+    /* List styling */
+    .main-container ul {
+        list-style-type: disc; 
+        padding-left: 20px; 
+        margin-bottom: 20px; 
+    }
+
+    .main-container li {
+        margin-bottom: 10px; 
+        font-size: 1rem; 
+    }
