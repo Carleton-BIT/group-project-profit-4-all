@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Review Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="discussion.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <header class="bg-white p-4 flex items-center justify-between fixed top-0 left-0 w-full shadow-md z-50">
+        <!-- Left: Carleton University Logo -->
+        <div class="flex items-center">
+            <img src="https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg" alt="Carleton University Logo" class="h-14">
+        </div>
+
+        <!-- Center: RMC Logo & Rate My Courses -->
+        <div class="flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+            <img src="image.png" alt="RMC Logo" class="h-10 mr-2">
+            <div class="rate-my-courses flex items-center">
+                <span class="rate-my"><strong>RATE MY</strong></span>
+                <span class="courses"><strong>COURSES</strong></span>
+            </div>
+        </div>
+
+        <!-- Right: Navigation Links -->
+        <nav class="flex space-x-4">
+            <a href="index.html" class="px-4 py-2 bg-gray-200 rounded">Home</a>
+            <a href="#" class="px-4 py-2 bg-gray-200 rounded">Subject</a>
+            <a href="#" class="px-4 py-2 bg-gray-200 rounded">About</a>
+            <a href="login.html" class="px-4 py-2 bg-gray-200 rounded">Log In</a>
+        </nav>
+    </header>
+
+    <!-- Push content down to avoid overlap with fixed navbar -->
+    <div class="review-container">
+        <h2>,<strong>Rate & Review Courses</strong></h2>
+        <form action="submit_review.php" method="POST">
+            <label for="course_name">Course Name:</label>
+            <input type="text" id="course_name" name="course_name" required>
+            
+            <label for="rating">Rating (1-5):</label>
+            <select id="rating" name="rating" required>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+            
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+            
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <hr>
+
+        <h3>Recent Course Reviews</h3>
+        <div id="reviews">
+            <div class="review">
+                <h4>IRM3004</h4>
+                <p>⭐⭐⭐⭐☆</p>
+                <p>Great course! The professor explained concepts well.</p>
+            </div>
+            <div class="review">
+                <h4>OSS3009</h4>
+                <p>⭐⭐⭐☆☆</p>
+                <p>Interesting material, but the assignments were tough.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="DiscussionBoard.html" class="back-link">Back to Discussion Board</a>
+
+</body>
+</html>
