@@ -4,11 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discussion Board - Rate My Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="DiscussionBoard.css">
 </head>
 <body>
+
+    <!-- Header Section (Navbar) -->
+    <header class="bg-white p-4 flex items-center justify-between fixed top-0 left-0 w-full shadow-md z-50">
+        <!-- Left: Carleton University Logo -->
+        <div class="flex items-center">
+            <img src="https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg" alt="Carleton University Logo" class="h-14">
+        </div>
+
+        <!-- Center: RMC Logo & Rate My Courses -->
+        <div class="flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+            <img src="image.png" alt="RMC Logo" class="h-10 mr-2">
+            <div class="rate-my-courses flex items-center">
+                <span class="rate-my"><strong>RATE MY</strong></span>
+                <span class="courses"><strong>COURSES</strong></span>
+            </div>
+        </div>
+
+        <!-- Right: Navigation Links -->
+        <nav class="flex space-x-4">
+            <a href="index.html" class="px-4 py-2 bg-gray-200 rounded">Home</a>
+            <a href="#" class="px-4 py-2 bg-gray-200 rounded">Subject</a>
+            <a href="#" class="px-4 py-2 bg-gray-200 rounded">About</a>
+            <a href="login.html" class="px-4 py-2 bg-gray-200 rounded">Log In</a>
+        </nav>
+    </header>
+
+
+
+    <!-- Push content down to avoid overlap with fixed navbar -->
     <div class="discussion-container">
-        <h2>Discussion Board</h2>
+        <h2><strong>Discussion Board</strong></h2>
         <p>View and discuss course reviews.</p>
 
         <!-- "Submit a Review" Button -->
@@ -27,7 +57,6 @@
                 <div class="comment">
                     <p><strong>User456:</strong> The assignments were challenging but fair.</p>
                 </div>
-                <!-- Add Comment Form -->
                 <form class="add-comment">
                     <textarea placeholder="Add a comment..." rows="2" required></textarea>
                     <button type="submit">Post Comment</button>
@@ -45,16 +74,21 @@
                 <div class="comment">
                     <p><strong>User789:</strong> I found the readings really helpful.</p>
                 </div>
-                <!-- Add Comment Form -->
                 <form class="add-comment">
                     <textarea placeholder="Add a comment..." rows="2" required></textarea>
                     <button type="submit">Post Comment</button>
                 </form>
             </div>
         </div>
-
-        <!-- Add more reviews as needed -->
     </div>
-    <a href="index.html" class="back-link">Back to Home</a>
+
+    <a href="homepage.html" class="back-link">Back to Home</a>
+  <!-- Footer with Social Icons -->
+  <footer class="flex justify-center space-x-6 p-4 mt-6 bg-white">
+    <a href="#"><img src="icon_award.png" alt="Award" class="h-8"></a>
+    <a href="#"><img src="icon_book.png" alt="Book" class="h-8"></a>
+    <a href="#"><img src="icon_linkedin.png" alt="LinkedIn" class="h-8"></a>
+    <a href="#"><img src="icon_twitter.png" alt="Twitter" class="h-8"></a>
+</footer>
 </body>
 </html>

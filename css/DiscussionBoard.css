@@ -1,16 +1,22 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #f4f4f4, #ffffff); /* Light gray to white gradient */
-    padding: 20px;
+    background: url('https://www.usatoday.com/gcdn/-mm-/a3d1f939dff013ba5e55d884eb889351d093904e/c=0-33-630-387/local/-/media/2018/08/15/USATODAY/usatsports/studying-night-e1492118687316.jpg?width=1200&disable=upscale&format=pjpg&auto=webp') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
     margin: 0;
-    min-height: 100vh;
+    padding-top: 80px; /* Push content down to avoid overlap with navbar */
 }
-
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dim the background */
+    z-index: -1;
+}
 h2, h3, h4, h5 {
     color: #2c3e50;
     margin-bottom: 15px;
@@ -26,13 +32,45 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Navbar Styles */
+/* Fix Navbar Layout */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Center the RMC Logo & Rate My Courses */
+header .flex.items-center.justify-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure Carleton Logo Stays Left */
+header div:first-child {
+    flex-shrink: 0;
+}
+
+/* Keep Navbar Links on the Right */
+header nav {
+    margin-left: auto;
+}
+
 /* Discussion Container */
 .discussion-container {
     background: white;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin: 80px auto 20px;
     width: 60%;
     max-width: 800px;
 }
@@ -150,18 +188,55 @@ a:hover {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-bottom: 20px; /* Space below the button */
-    text-decoration: none; /* Remove underline */
+    margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .submit-review-button:hover {
     background-color: #CC0000;
 }
+.rate-my-courses {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+.rate-my-courses img {
+    height: 40px; /* Adjust the size */
+    margin-right: 8px; /* Space between logo and text */
+}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .discussion-container {
-        width: 90%;
-        padding: 15px;
-    }
+.rate-my {
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.courses {
+    background-color: lightblue;
+    color: black;
+    padding: 10px 15px;
+    border-left: 3px solid white;
+    position: relative;
+}
+
+/* Adding small peaks to the edges */
+.rate-my::before, .courses::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid black;
+}
+
+.courses::before {
+    left: auto;
+    right: 10px;
+    border-top: 10px solid lightblue;
 }
