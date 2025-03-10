@@ -1,39 +1,113 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const reviewForm = document.querySelector("form");
-    const reviewContainer = document.getElementById("reviews");
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewsContainer = document.getElementById("reviews");
+    const editModal = document.getElementById("editModal");
+    const closeModal = document.getElementById("closeModal");
+    const saveChanges = document.getElementById("saveChanges");
 
-    if (reviewForm) {
-        reviewForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+    let editIndex = null; // Track the index of the review being edited
 
-            // Get form values
-            const courseName = document.getElementById("course_name").value.trim();
-            const rating = document.getElementById("rating").value;
-            const reviewText = document.getElementById("review").value.trim();
+    // Load reviews from localStorage
+    function loadReviews() {
+        const reviews = JSON.parse(localStorage.getItem("courseReviews")) || [];
+        reviewsContainer.innerHTML = ""; // Clear the container before loading
 
-            if (courseName === "" || reviewText === "") {
-                alert("Please fill out all fields before submitting.");
-                return;
-            }
+        // Sort reviews by highest rating first
+        reviews.sort((a, b) => b.rating - a.rating);
 
-            // Create a new review div
-            const reviewDiv = document.createElement("div");
-            reviewDiv.classList.add("review");
-
-            // Convert rating to stars
-            let stars = "⭐".repeat(rating) + "☆".repeat(5 - rating);
-
-            reviewDiv.innerHTML = `
-                <h4>${courseName}</h4>
-                <p>${stars}</p>
-                <p>${reviewText}</p>
+        reviews.forEach((review, index) => {
+            const reviewElement = document.createElement("div");
+            reviewElement.classList.add("review");
+            reviewElement.innerHTML = `
+                <h4>${review.course}</h4>
+                <p>${"⭐".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</p>
+                <p>${review.text}</p>
+                <button class="edit-btn" data-index="${index}">Edit</button>
+                <button class="delete-btn" data-index="${index}">Delete</button>
             `;
+            reviewsContainer.appendChild(reviewElement);
+        });
 
-            // Add the new review to the page
-            reviewContainer.prepend(reviewDiv);
+        // Add event listeners to edit and delete buttons
+        document.querySelectorAll(".edit-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                openEditModal(this.getAttribute("data-index"));
+            });
+        });
 
-            // Reset the form
-            reviewForm.reset();
+        document.querySelectorAll(".delete-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                deleteReview(this.getAttribute("data-index"));
+            });
         });
     }
+
+    // Handle Form Submission (Adding a new review)
+    reviewForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const courseName = document.getElementById("course_name").value;
+        const rating = parseInt(document.getElementById("rating").value);
+        const reviewText = document.getElementById("review").value;
+
+        if (courseName && rating && reviewText) {
+            const newReview = { course: courseName, rating: rating, text: reviewText };
+
+            let reviews = JSON.parse(localStorage.getItem("courseReviews")) || [];
+            reviews.push(newReview);
+            localStorage.setItem("courseReviews", JSON.stringify(reviews));
+
+            loadReviews(); // Refresh the list
+            reviewForm.reset(); // Clear form after submission
+        }
+    });
+
+    // Open Edit Modal
+    function openEditModal(index) {
+        let reviews = JSON.parse(localStorage.getItem("courseReviews")) || [];
+        let review = reviews[index];
+
+        document.getElementById("editCourseName").value = review.course;
+        document.getElementById("editRating").value = review.rating;
+        document.getElementById("editReviewText").value = review.text;
+
+        editIndex = index;
+        editModal.style.display = "block";
+    }
+
+    // Save Changes (Editing a review)
+    saveChanges.addEventListener("click", function () {
+        let reviews = JSON.parse(localStorage.getItem("courseReviews")) || [];
+
+        reviews[editIndex] = {
+            course: document.getElementById("editCourseName").value,
+            rating: parseInt(document.getElementById("editRating").value),
+            text: document.getElementById("editReviewText").value
+        };
+
+        localStorage.setItem("courseReviews", JSON.stringify(reviews));
+        editModal.style.display = "none"; // Close modal
+        loadReviews(); // Refresh review list
+    });
+
+    // Close Edit Modal
+    closeModal.addEventListener("click", function () {
+        editModal.style.display = "none";
+    });
+
+    // Delete Review with Confirmation
+    function deleteReview(index) {
+        let reviews = JSON.parse(localStorage.getItem("courseReviews")) || [];
+        const confirmDelete = confirm("Are you sure you want to delete this review?");
+
+        if (confirmDelete) {
+            reviews.splice(index, 1); // Remove review at index
+            localStorage.setItem("courseReviews", JSON.stringify(reviews));
+            loadReviews(); // Refresh the list
+        }
+    }
+
+    // Load reviews on page load
+    loadReviews();
 });
+
