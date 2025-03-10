@@ -4,33 +4,17 @@ document.addEventListener("DOMContentLoaded", function () {
     commentForms.forEach((form) => {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
+            const textArea = this.querySelector("textarea");
+            const commentText = textArea.value.trim();
 
-            // Get the comment text area inside this form
-            const commentInput = this.querySelector("textarea");
-            const commentText = commentInput.value.trim();
+            if (commentText === "") return;
 
-            if (commentText === "") {
-                alert("Please enter a comment before posting.");
-                return;
-            }
+            const newComment = document.createElement("div");
+            newComment.classList.add("comment");
+            newComment.innerHTML = `<p><strong>You:</strong> ${commentText}</p>`;
 
-            // Create a new comment div
-            const commentDiv = document.createElement("div");
-            commentDiv.classList.add("comment");
-
-            // Get a random username for now (could be replaced with actual user data)
-            const username = "User" + Math.floor(Math.random() * 1000);
-
-            commentDiv.innerHTML = `
-                <p><strong>${username}:</strong> ${commentText}</p>
-            `;
-
-            // Find the closest comment section and add the new comment
-            const commentsSection = this.closest(".comments");
-            commentsSection.appendChild(commentDiv);
-
-            // Clear input after submission
-            commentInput.value = "";
+            this.parentNode.insertBefore(newComment, this);
+            textArea.value = "";
         });
     });
 });
