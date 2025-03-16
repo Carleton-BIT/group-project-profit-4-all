@@ -119,7 +119,7 @@ h2, h3, h4 {
 }
 
 a {
-    color: #FF0000;
+    color: #00bcd4;
     text-decoration: none;
     font-weight: bold;
 }
@@ -162,14 +162,14 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-    border-color: #FF0000;
+    border-color: #00bcd4;
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 12px;
-    background-color: #FF0000;
+    background-color: #00bcd4;
     color: white;
     border: none;
     border-radius: 6px;
@@ -180,7 +180,7 @@ button {
 }
 
 button:hover {
-    background-color: #CC0000;
+    background-color:  #2d2d3c;
 }
 
 /* Review Section Styles */
@@ -193,7 +193,7 @@ button:hover {
     padding: 15px;
     margin-top: 15px;
     border-radius: 8px;
-    border-left: 4px solid #FF0000;
+    border-left: 4px solid #00bcd4;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -216,7 +216,7 @@ button:hover {
 .review p:first-of-type {
     font-size: 16px;
     font-weight: bold;
-    color: #FF0000;
+    color: #00bcd4;
 }
 
 /* Responsive Design */
@@ -235,12 +235,12 @@ button:hover {
     }
 }
 .back-link {
-    color: #FF0000 !important; /* Bright Red */
+    color: #00bcd4; !important; /* Shade of Blue */
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
 }
 
 .back-link:hover {
-    color: #CC0000; /* Darker red for hover effect */
+    color: #2d2d3c; /* Darker blue for hover effect */
 }
