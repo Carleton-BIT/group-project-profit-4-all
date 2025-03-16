@@ -23,7 +23,7 @@ h2, h3, h4, h5 {
 }
 
 a {
-    color: #FF0000;
+    color:  #00bcd4;
     text-decoration: none;
     font-weight: bold;
 }
@@ -81,7 +81,7 @@ header nav {
     padding: 15px;
     margin-top: 15px;
     border-radius: 8px;
-    border-left: 4px solid #FF0000;
+    border-left: 4px solid  #00bcd4;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -104,7 +104,7 @@ header nav {
 .review p:first-of-type {
     font-size: 16px;
     font-weight: bold;
-    color: #FF0000;
+    color:  #00bcd4;
 }
 
 /* Comments Section */
@@ -147,13 +147,13 @@ header nav {
 }
 
 .add-comment textarea:focus {
-    border-color: #FF0000;
+    border-color:  #00bcd4;
     outline: none;
 }
 
 .add-comment button {
     padding: 10px 15px;
-    background-color: #FF0000;
+    background-color:  #00bcd4;
     color: white;
     border: none;
     border-radius: 6px;
@@ -164,7 +164,7 @@ header nav {
 }
 
 .add-comment button:hover {
-    background-color: #CC0000;
+    background-color:  #2d2d3c;
 }
 
 /* Back Link */
@@ -179,7 +179,7 @@ header nav {
 .submit-review-button {
     display: inline-block;
     padding: 12px 20px;
-    background-color: #FF0000;
+    background-color: #00bcd4;
     color: white;
     border: none;
     border-radius: 6px;
@@ -193,7 +193,7 @@ header nav {
 }
 
 .submit-review-button:hover {
-    background-color: #CC0000;
+    background-color:  #2d2d3c;
 }
 .rate-my-courses {
     display: flex;
